@@ -1,3 +1,29 @@
+import { AlertBox } from './components/AlertBox/AlertBox';
+
+function App() {
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Component Library</h1>
+      
+      <AlertBox type="success" message="AlertBox component works!" />
+      
+      <div className="mt-4">
+        <AlertBox 
+          type="error" 
+          message="Error alert with close button" 
+          onClose={() => alert('Closed!')}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+/*
 function App() {
   return (
     <div className="p-8 bg-blue-100">
@@ -9,6 +35,7 @@ function App() {
 }
 
 export default App;
+*/
 
 
 /*
