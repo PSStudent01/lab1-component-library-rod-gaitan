@@ -1,18 +1,45 @@
 import { AlertBox } from './components/AlertBox/AlertBox';
+import { UserProfileCard } from './components/UserProfileCard/UserProfileCard';
 
 function App() {
+
+  const user = {
+    id: '1',
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    role: 'Software Engineer',
+    avatarUrl: 'https://example.com/avatar.jpg'
+  };
+
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Component Library</h1>
-      
+
       <AlertBox type="success" message="AlertBox component works!" />
-      
+
       <div className="mt-4">
-        <AlertBox 
-          type="error" 
-          message="Error alert with close button" 
+        <AlertBox
+          type="error"
+          message="Error alert with close button"
           onClose={() => alert('Closed!')}
         />
+      </div>
+
+      {/* After creating 'UserProfileCard' component and importing it here, I must use it as follows: */}
+      <div className="mt-8">
+        <h2 className="text-xl font-bold mb-4">UserProfileCard</h2>
+        <div className="max-w-md">
+          <UserProfileCard
+            user={user}
+            showEmail={true}
+            showRole={true}
+            onEdit={(userId) => alert(`Editing user ${userId}`)}
+          >
+            <div className="text-sm text-gray-500">
+              Last login: 2 hours ago
+            </div>
+          </UserProfileCard>
+        </div>
       </div>
     </div>
   );
