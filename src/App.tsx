@@ -1,5 +1,6 @@
 import { AlertBox } from './components/AlertBox/AlertBox';
 import { UserProfileCard } from './components/UserProfileCard/UserProfileCard';
+import { ProductDisplay } from './components/ProductDisplay/ProductDisplay';
 
 function App() {
 
@@ -9,7 +10,16 @@ function App() {
     email: 'john.doe@example.com',
     role: 'Software Engineer',
     avatarUrl: 'https://example.com/avatar.jpg'
-  };
+  }
+
+  const product = {
+    id: '1',
+    name: 'Wireless Headphones',
+    price: 199.99,
+    description: 'High-quality wireless headphones with noise cancellation.',
+    imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500',
+    inStock: true
+  }
 
   return (
     <div className="p-8">
@@ -39,6 +49,18 @@ function App() {
               Last login: 2 hours ago
             </div>
           </UserProfileCard>
+
+          <ProductDisplay
+            product={product}
+            showDescription={true}
+            showStockStatus={true}
+            onAddToCart={(productId) => alert(`Added product ${productId} to cart`)}
+          >
+            <div className="text-sm text-gray-500">
+              Free shipping available
+            </div>
+          </ProductDisplay>
+
         </div>
       </div>
     </div>

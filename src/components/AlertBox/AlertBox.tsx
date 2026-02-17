@@ -1,7 +1,7 @@
 // components/AlertBox/AlertBox.tsx
 import React from 'react';
 //import { AlertBoxProps } from '../../types'; // creates error" "'AlertBoxProps' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled."
-import type { AlertBoxProps } from '../../types'; 
+import type { AlertBoxProps } from '../../types';
 
 export const AlertBox: React.FC<AlertBoxProps> = ({
   type,
@@ -15,7 +15,7 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
     warning: 'bg-yellow-100 border-yellow-500 text-yellow-700',
     info: 'bg-blue-100 border-blue-500 text-blue-700'
   };
- 
+
   return (
     <div className={`p-4 border-l-4 ${alertStyles[type]}`}>
       <div className="flex justify-between items-center">
