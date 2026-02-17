@@ -3,7 +3,7 @@ import React from 'react';
 import type { ProductDisplayProps } from '../../types';
 
 export const ProductDisplay: React.FC<ProductDisplayProps> = ({
-    product
+    product,
 }) => {
 
     return (

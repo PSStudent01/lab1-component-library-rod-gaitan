@@ -7,7 +7,7 @@ export const AlertBox: React.FC<AlertBoxProps> = ({
   type,
   message,
   onClose,
-  children
+  children,
 }) => {
   const alertStyles = {
     success: 'bg-green-100 border-green-500 text-green-700',

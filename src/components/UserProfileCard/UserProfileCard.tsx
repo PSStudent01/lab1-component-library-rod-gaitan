@@ -4,7 +4,6 @@ import type { UserProfileCardProps } from '../../types';  //importing this inter
 
 export const UserProfileCard: React.FC<UserProfileCardProps> = ({
     user,
-
 }) => {
     return (
         <div className="border rounded-lg p-6 bg-white shadow-md">
@@ -22,6 +21,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({
             </div>
                 <p className="text-gray-600 mb-2">{user.email}</p>
                 <p className="text-gray-500 text-sm">{user.role}</p>
+             
         </div>
     )
 };
