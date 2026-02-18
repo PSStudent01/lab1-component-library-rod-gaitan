@@ -40,7 +40,7 @@ function App() {
         <h2 className="text-xl font-bold mb-4">UserProfileCard</h2>
         <div className="max-w-md">
           <UserProfileCard
-            
+            user={user}
             showEmail={true}
             showRole={true}
             onEdit={(userId) => alert(`Editing user ${userId}`)}
