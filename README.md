@@ -1,73 +1,190 @@
-# React + TypeScript + Vite
+README file for Lab 9.1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+\# 
 
-## React Compiler
+Component Library
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A reusable React component library built with TypeScript and Tailwind CSS.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+\## 
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+\###
+
+Clone and install
+
+npm install
+
+
+
+\###
+
+Run development server
+
+npm run dev
+
+
+
+\*Note: 
+
+\- This project uses Tailwind CSS v3. If you encounter setup issues, be sure you have:
+
+-- 'tailwindcss@^3' installed
+
+-- '@tailwind' code line in 'src/index.css'
+
+-- Proper 'tailwind.config.js' configuration
+
+
+
+\*Note:
+
+\- WARNING: ""Unknown at rule @tailwind"..."
+
+\- VS Code's appears to be complaining about Tailwind:
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.. but it's not causing any issues, so I decided to just leave it as is
+
+
+
+\##
+
+Documentation:
+
+\- Example usage documentation, provided within the code itself
+
+
+
+\## 
+
+Components:
+
+
+
+\### 
+
+AlertBox:
+
+\- Displays styled alert messages.
+
+
+
+<AlertBox type="success" message="Profile saved!" />
+
+
+
+<AlertBox
+
+&nbsp; type="error"
+
+&nbsp; message="Something went 	wrong!"
+
+&nbsp; onClose={() => setShowAlert(false)}
+
+/>
+
+
+
+<AlertBox type="warning" message="Be careful!">
+
+&nbsp; <p>Additional details here.</p>
+
+</AlertBox>
+
+
+
+
+
+Types: `success` | `error` | `warning` | `info`
+
+
+
+\### 
+
+UserProfileCard:
+
+\- Displays a user's profile information.
+
+
+
+const user = {
+
+&nbsp; id: '1',
+
+&nbsp; name: 'John Doe',
+
+&nbsp; email: 'john.doe@example.com',
+
+&nbsp; role: 'Software Engineer'
+
+};
+
+
+
+<UserProfileCard user={user} />
+
+
+
+\### 
+
+ProductDisplay
+
+\- Displays product information.
+
+
+
+const product = {
+
+&nbsp; id: '1',
+
+&nbsp; name: 'Wireless Headphones',
+
+&nbsp; price: 199.99,
+
+&nbsp; description: 'High-quality wireless headphones.',
+
+&nbsp; imageUrl: 'https://example.com/image.jpg',
+
+&nbsp; inStock: true
+
+};
+
+
+
+<ProductDisplay product={product} />
+
+
+
+
+
+\## 
+
+Resources Used:
+
+\- Per Scholas Lab 1 instructions
+
+\- React Official Documentation: https://react.dev/
+
+\- Vite Official Documentation: https://vitejs.dev/ 
+
+\- React for Beginners  (React Docs Tutorial): https://react.dev/learn
+
+\- Learn React With This ONE Project: https://www.youtube.com/watch?v=G6D9cBaLViA
+
+\- used only concepts covered up to Lesson 3 bc conditional rendering had not been taught yet
+
